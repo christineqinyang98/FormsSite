@@ -1,0 +1,3 @@
+C:\Users\chris\source\repos\SampleForms\obj\Debug\SampleForms.njsprojAssemblyReference.cache
+C:\Users\chris\source\repos\SampleForms\obj\Debug\SampleForms.njsproj.CoreCompileInputs.cache
+C:\Users\chris\source\repos\SampleForms\bin\Microsoft.NodejsTools.WebRole.dll
