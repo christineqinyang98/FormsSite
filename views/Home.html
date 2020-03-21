@@ -1,0 +1,104 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="/stylesheets/Home.css">
+    <title>Home</title>
+</head>
+<body>
+    <h1>Sample Form</h1>
+    <form>
+        <fieldset>
+            <legend>Sample Form</legend>
+            <p id="name">
+                <label>Project Name</label>
+                <input type="text" id="idProjectName" value="" />
+            </p>
+            <p id="sales">
+                <label>Sales Channel</label>
+                <select id="idSalesChannel"  onchange="salesChanged()">
+                <option></option>
+                <option value="retail">Retail</option>
+                <option value="mass">Mass</option>
+                </select>
+            </p>
+            <p id="cust">
+                <label>Customer</label>
+                <select id="idCustomer">
+                <option></option>
+                </select>
+            </p>
+            <script>
+                function salesChanged() {
+                    var sales = document.getElementById("idSalesChannel");
+
+                    if (sales.options[sales.selectedIndex].value == "retail") {
+                        document.getElementById("idCustomer").innerHTML = "<option></option> \
+                            <option value = 'ACIT GROUP LIMITED' >ACIT GROUP LIMITED</option > \
+                            <option value='AB PHOENIX'>AB PHOENIX</option> \
+                            <option value='AB PHOENIX'>Vons</option> \
+                            <option value='AB PHOENIX'>Safeway</option>";
+                    }
+                    else {
+                        document.getElementById("idCustomer").innerHTML = "<option></option> \
+                            <option value = 'ACIT GROUP LIMITED' >Walmart No Nuts</option > \
+                            <option value='AB PHOENIX'>Walmart DC 6012</option> \
+                            <option value='AB PHOENIX'>Walmart DC 7026</option> \
+                            <option value='AB PHOENIX'>Walmrat DC 7039</option>";
+                    }
+                }
+            </script>
+            <p id="vol">
+                <label>Volume (Units)</label>
+                <input type="text" id="idVolume" />
+            </p>
+            <p id="time">
+                <label>Program Time</label>
+                <select id="idProgramTime" onchange="timeChanged()">
+                <option></option>
+                <option value="permanent">Permanent</option>
+                <option value="lto">LTO</option>
+                </select>
+            </p>
+            <p id="length">
+            </p>
+            <script>
+                function timeChanged() {
+                    var time = document.getElementById("idProgramTime");
+
+                    if (time.options[time.selectedIndex].value == "lto") {
+                        document.getElementById("length").innerHTML = "<label>Program Length</label> \
+                            <input type = 'text' id = 'idProgramLength' />"
+                    }
+                }
+            </script>
+            <p id="date">
+                <label>Date</label><br>
+                <input type="date" id="idDate" />
+            </p>
+            <p id="category">
+                <label>Product Category</label><br>
+                <input type="radio" id="idProductCategory" name="ProductCategory" value="Sweet Good" checked />Sweet Good<br>
+                <input type="radio" id="idProductCategory" name="ProductCategory" value="Flat Bread" />Flat Bread<br>
+            </p>
+            <p id="submit">
+                <input type="submit" />
+            </p>
+            <p>
+        </fieldset>
+    </form>
+    <script>
+        var submit = document.getElementById("submit");
+        var projName = document.getElementById("idProjectName");
+
+        submit.onclick = function () {
+            if (projName.value == "") {
+                alert("Error: Please Fill Project Name");
+            }
+            else {
+                alert(projName.value + "\nClick Ok to save the project");
+            }
+        }
+    </script>
+</body>
+</html>
